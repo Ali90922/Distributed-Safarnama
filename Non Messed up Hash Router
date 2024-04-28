@@ -5,6 +5,11 @@ import Navbar from './NavBar';
 import Footer from './Footer'
 import AboutMe from './AboutMe'
 
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Scheme from './Schematicz'
+
+
 
 
 function Karimabad(){
@@ -157,6 +162,13 @@ function App() {
 
 
         <Footer />
+
+        <HashRouter>
+      <Routes>
+        <Route path="/scheme" element={<Scheme />} />
+      </Routes>
+    </HashRouter>
+
         
 
       </header>
@@ -168,4 +180,3 @@ export default App;
 
 
 
-; Version of the file without the hash router - gotta come back to this since the version with the hash router completely messes up the pages css functionality.
