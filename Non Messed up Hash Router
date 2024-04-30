@@ -4,27 +4,18 @@ import ImageComponent from './ImageComponent'; // Import the ImageComponent
 import Navbar from './NavBar';
 import Footer from './Footer'
 import AboutMe from './AboutMe'
+import Home from './Home'
 
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated import
+
+
+
 import { Link } from 'react-router-dom';
 import Scheme from './Schematicz'
 
 
 
 
-function Karimabad(){
-  const imageUrl = "Karimabad.JPG";
-  return (
-    <div className="image-container">
-        <img className="enlarged-image" src={imageUrl} alt="Mountain Image" />
-        <div className="image-text2">KARIMABAD</div>
-        <div className="date-text2">Jun 27, 2021 - 7:57 am Apple iPhone 11</div>
-        <div className="date-text3">36.3264° N, 74.6643° E</div>
-
-
-    </div>
-  );
-}
 
 
 function Myself() {
@@ -144,39 +135,16 @@ function Climbed() {
 function App() {
   return (
     <div className="App" style={{ backgroundColor: '#f8f9f9' }}>
-      <header className="App-header">
-        {/* Replace the logo image with the ImageComponent */}
-        <Navbar /> {/* Render the Navbar component */}
-        
-        <Karimabad/>
-        <Myself/>
-        <ImageComponent/>
-        <PeaksClimbed/>
-
-        <Climbed/>
-        <HoweSound/>
-
-        
-
-        
+   
+        <Routes>
+          {/* Define routes */}
+          <Route path="/scheme" element={<Scheme />} />
+          <Route path="/" element={<Home />} />
 
 
-        <Footer />
-
-        <HashRouter>
-      <Routes>
-        <Route path="/scheme" element={<Scheme />} />
-      </Routes>
-    </HashRouter>
-
-        
-
-      </header>
+        </Routes>
     </div>
   );
 }
-
 export default App;
-
-
 
